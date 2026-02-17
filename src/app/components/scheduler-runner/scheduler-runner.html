@@ -1,0 +1,83 @@
+<div class="container main-screen">
+  <h2>{{ selectedAlgorithm.toUpperCase() }} Simulation</h2>
+
+  <!-- Input Section -->
+  <div class="input-section">
+    <input type="text" placeholder="Process Name" [(ngModel)]="newProcess.pid">
+    <input type="number" placeholder="Arrival Time" [(ngModel)]="newProcess.arrivalTime">
+    <input type="number" placeholder="Burst Time" [(ngModel)]="newProcess.burstTime">
+    <button (click)="addProcess()">Add Process</button>
+    <button (click)="clearProcesses()" class="remove-btn">Clear All</button>
+    <button (click)="runAlgorithm()">Run</button>
+  </div>
+
+  <!-- Table of Added Processes -->
+  <table *ngIf="processes.length > 0">
+    <thead>
+      <tr>
+        <th>PID</th>
+        <th>Arrival Time</th>
+        <th>Burst Time</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of processes; let i = index">
+        <td>{{ p.pid }}</td>
+        <td>{{ p.arrivalTime }}</td>
+        <td>{{ p.burstTime }}</td>
+        <td><button (click)="removeProcess(i)" class="remove-btn">✖</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- Animated Gantt Chart -->
+<div class="gantt-chart" *ngIf="animatedChart.length > 0">
+ <div class="gantt-container" *ngFor="let block of animatedChart">
+ <div class="block">{{ block.label }}</div>
+ <div>{{ block.start }} - {{ block.end }}</div>
+ </div>
+</div>
+
+
+
+
+
+  <!-- Metrics Table -->
+  <table *ngIf="processes.length > 0 && processes[0].startTime !== undefined">
+    <thead>
+      <tr>
+        <th>PID</th>
+        <th>Start Time</th>
+        <th>Completion</th>
+        <th>Turnaround</th>
+        <th>Waiting</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of processes">
+        <td>{{ p.pid }}</td>
+        <td>{{ p.startTime }}</td>
+        <td>{{ p.completionTime }}</td>
+        <td>{{ p.turnaroundTime }}</td>
+        <td>{{ p.waitingTime }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3"><b>Averages:</b></td>
+        <td><b>{{ avgTurnaround | number:'1.2-2' }}</b></td>
+        <td><b>{{ avgWaiting | number:'1.2-2' }}</b></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <!-- Back Button -->
+  <div style="text-align: center; margin-bottom: 30px;">
+    <button (click)="backToHome()" class="back-btn">🔙 Back to Welcome Page</button>
+  </div>
+  <button (click)="saveToBackend()">💾 Save to Backend</button>
+<button (click)="loadFromBackend()">🔄 Load from Backend</button>
+
+</div>

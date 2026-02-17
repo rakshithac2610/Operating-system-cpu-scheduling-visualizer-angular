@@ -1,0 +1,144 @@
+/* ===============================
+   Theme Variables (Dark - Default)
+   =============================== */
+:root {
+  --bg-color: #1e272e;
+  --text-color: #ffffff;
+  --card-color: #2d3436;
+  --primary-color: #00cec9;
+  --danger-color: #d63031;
+  --hover-color: #098;
+}
+
+/* ===============================
+   Light Theme Overrides
+   =============================== */
+body.light {
+  --bg-color: #f4f4f4;
+  --text-color: #222;
+  --card-color: #e0e0e0;
+}
+
+/* ===============================
+   Global Styles
+   =============================== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.4s, color 0.4s;
+}
+
+/* ===============================
+   Container
+   =============================== */
+.container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ===============================
+   Screens
+   =============================== */
+.welcome-screen,
+.main-screen {
+  text-align: center;
+}
+
+/* ===============================
+   Inputs & Buttons
+   =============================== */
+input,
+button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+button {
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--hover-color);
+}
+
+/* ===============================
+   Table
+   =============================== */
+table {
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+}
+
+/* ===============================
+   Gantt Chart
+   =============================== */
+.gantt-chart {
+  display: flex;
+  height: 60px;
+  margin-top: 10px;
+  overflow-x: auto;
+  background: var(--card-color);
+  border-radius: 6px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  position: relative;
+  min-width: 100%;
+}
+
+.gantt-container {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  margin-right: 2px;
+}
+
+/* ===============================
+   Theme Toggle Button
+   =============================== */
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: var(--primary-color);
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.theme-toggle:hover {
+  background: var(--hover-color);
+}
+
+/* ===============================
+   Remove Button
+   =============================== */
+.remove-btn {
+  background: var(--danger-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+}

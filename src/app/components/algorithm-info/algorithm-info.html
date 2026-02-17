@@ -1,0 +1,11 @@
+<div class="info-container">
+ <h2>{{ selectedAlgorithm.toUpperCase() }} Algorithm</h2>
+<p *ngIf="selectedAlgorithm === 'sjf'">
+Shortest Job First (SJF) is a non-preemptive scheduling algorithm where the process with the shortest burst time executes first.
+ </p>
+ <p *ngIf="selectedAlgorithm === 'srtf'">
+ Shortest Remaining Time First (SRTF) is the preemptive version of SJF where the currently executing process may be interrupted.
+ </p>
+
+ <button (click)="goToSimulator()">▶️ Continue to Simulator</button>
+</div>

@@ -1,0 +1,50 @@
+.info-container {
+ max-width: 800px;
+ margin: 40px auto;
+ padding: 30px;
+ border-radius: 10px;
+ background-color: var(--bg-color, #ffffff);
+ color: var(--text-color, #000000);
+ box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+ transition: background-color 0.4s, color 0.4s;
+}
+
+body:not(.light) .info-container {
+ --bg-color: #1e1e1e;
+ --text-color: #f1f1f1;
+}
+
+.algo-title {
+ text-align: center;
+ font-size: 28px;
+ margin-bottom: 20px;
+}
+
+.description {
+font-size: 17px;
+line-height: 1.6;
+margin-bottom: 30px;
+}
+
+.description b {
+ color: #2196f3;
+}
+
+.button-container {
+text-align: center;
+}
+
+.continue-btn {
+ background-color: #4caf50;
+ color: white;
+ padding: 10px 20px;
+ font-size: 16px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+}
+
+.continue-btn:hover {
+ background-color: #388e3c;
+}

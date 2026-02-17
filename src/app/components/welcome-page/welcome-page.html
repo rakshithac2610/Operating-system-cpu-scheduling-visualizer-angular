@@ -1,0 +1,9 @@
+<div class="container welcome-screen">
+    <button class="theme-toggle-btn" (click)="toggleTheme()">
+  {{ isLight ? '🌞' : '🌙' }}
+</button>
+  <h1>CPU Scheduling Visualizer</h1>
+  <p>Select an algorithm to simulate:</p>
+  <button (click)="navigateToInfo('sjf')">SJF (Shortest Job First)</button>
+  <button (click)="navigateToInfo('srtf')">SRTF (Shortest Remaining Time First)</button>
+</div>
