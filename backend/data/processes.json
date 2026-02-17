@@ -1,0 +1,32 @@
+[
+  {
+    "pid": "p1",
+    "arrivalTime": 0,
+    "burstTime": 3,
+    "remainingTime": 0,
+    "startTime": 0,
+    "completionTime": 3,
+    "turnaroundTime": 3,
+    "waitingTime": 0
+  },
+  {
+    "pid": "p2",
+    "arrivalTime": 1,
+    "burstTime": 5,
+    "remainingTime": 0,
+    "startTime": 7,
+    "completionTime": 12,
+    "turnaroundTime": 11,
+    "waitingTime": 6
+  },
+  {
+    "pid": "p3",
+    "arrivalTime": 0,
+    "burstTime": 4,
+    "remainingTime": 0,
+    "startTime": 3,
+    "completionTime": 7,
+    "turnaroundTime": 7,
+    "waitingTime": 3
+  }
+]
